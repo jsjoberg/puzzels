@@ -31,6 +31,7 @@ report() {
 # test suit
 # test cases
 tc 01a input1 3386686
+tc 01b input1 5077155
 
 report
 
