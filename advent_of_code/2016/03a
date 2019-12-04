@@ -1,0 +1,14 @@
+#!/usr/bin/env tcl
+set i 0
+while {[gets stdin line] >= 0} {
+  scan $line "%d %d %d" x y z
+  incr i
+  foreach a [list $x $y $z] b [list $y $z $x] c [list $z $x $y] {
+    if {$a + $b <= $c} {
+      incr i -1
+      break
+    }
+  }
+}
+puts $i
+

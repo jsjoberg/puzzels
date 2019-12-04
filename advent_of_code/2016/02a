@@ -1,0 +1,21 @@
+#!/bin/sh
+exec guile -e main -s "$0" "$@"
+!#
+(define (p n x)
+  (= x (modulo n 3)))
+(define (f n p x y)
+  (g (+ n (if (p n x) 0 y))))
+(define (g n)
+  (case (read-char)
+    ((#\L) (f n p 1 -1))
+    ((#\R) (f n p 0 1))
+    ((#\U) (f n < 4 -3))
+    ((#\D) (f n > 6 3))
+    (else n)))
+(define (h n) 
+  (if (eof-object? (peek-char))
+    (list n #\newline)
+    (cons n (h (g n)))))
+(define (main args)
+  (map display (h (g 5))))
+
