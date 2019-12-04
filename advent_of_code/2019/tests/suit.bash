@@ -33,6 +33,7 @@ report() {
 tc 01a input1 3386686
 tc 01b input1 5077155
 tc 02a input2 3085697
+tc 02b input2 9425
 
 report
 

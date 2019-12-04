@@ -5,5 +5,5 @@ Solutions to some Advent of Code 2016 problems in C, C++, Scheme or TCL.
 
 Solutions to some Advent of Code 2018 problems in C++.
 
-Solution to one Advent of Code 2019 problem in C++.
+Solutions to some Advent of Code 2019 problems in C++.
 
