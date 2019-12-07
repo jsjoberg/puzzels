@@ -1,4 +1,4 @@
-all: 01a 01b 02a 02b
+all: 01a 01b 02a 02b 03a
 %: %.o
 %.o: %.cc
 
