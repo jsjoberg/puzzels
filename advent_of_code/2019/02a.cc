@@ -18,7 +18,7 @@ std::vector<int> load() {
 
 void run(std::vector<int> &m) {
 	int pc = 0;
-	for(;;) {
+	for (;;) {
 		switch (m[pc]) {
 			case 1:
 				m[m[pc + 3]] = m[m[pc + 1]] + m[m[pc + 2]];

@@ -25,7 +25,6 @@ struct Line {
 				x = l2.x1;
 				y = y1;
 			} else {
-				//std::cout << "lur\n";
 				return false;
 			}
 			d = std::abs(x - xx) + std::abs(x - l2.xx)

@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 struct Line {
 	int x1, y1, x2, y2;
@@ -20,7 +20,6 @@ struct Line {
 				y = y1;
 				x = l2.x1;
 			} else {
-				//std::cout << "lur\n";
 				return false;
 			}
 			return x != 0 || y != 0;
@@ -72,12 +71,12 @@ int main() {
 	auto wire1 = load();
 	auto wire2 = load();
 
-	for (auto it = wire1.begin(); it != wire1.end(); it++) {
-		for (auto jt = wire2.begin(); jt != wire2.end(); jt++) {
+	for (auto l1 : wire1) {
+		for (auto l2 : wire2) {
 			int x, y;
-			if (it->intersect(*jt, x, y)) {
+			if (l1.intersect(l2, x, y)) {
 				int m = std::abs(x) + std::abs(y);
-				if (t == 0 || (m < t && (x != 0 || y != 0))) {
+				if (t == 0 || m < t) {
 					t = m;
 				}
 			}
