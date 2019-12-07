@@ -42,6 +42,7 @@ tc 03b input3_ex0 30
 tc 03b input3_ex1 610
 tc 03b input3_ex2 410
 tc 03b input3 32132
+tc 04a input4 2150
 
 report
 
