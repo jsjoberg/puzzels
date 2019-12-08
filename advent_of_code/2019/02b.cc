@@ -33,6 +33,7 @@ void run(std::vector<int> &m) {
 				break;
 		}
 	}
+	return;
 }
 
 int search(std::vector<int> &m) {
@@ -47,6 +48,7 @@ int search(std::vector<int> &m) {
 				return 100 * n + v;
 		}
 	}
+	return -1;
 }
 
 int main() {
