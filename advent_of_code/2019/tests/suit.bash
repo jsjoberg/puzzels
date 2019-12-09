@@ -45,6 +45,7 @@ tc 03b input3 32132
 tc 04a input4 2150
 tc 04b input4 1462
 tc 05a input5 11049715
+tc 05b input5 2140710
 
 report
 
