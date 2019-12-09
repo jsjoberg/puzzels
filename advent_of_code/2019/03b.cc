@@ -42,6 +42,8 @@ std::vector<Line> load() {
 	t = 0;
 	x = 0;
 	y = 0;
+	dx = 0;
+	dy = 0;
 	while (std::cin.get(c) && c != '\n') {
 		if (c == 'U') {
 			dx = 1;
