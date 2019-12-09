@@ -1,7 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <unistd.h>
-#include <cmath>
 
 std::vector<int> load() {
 	std::vector<int> m;
@@ -14,12 +12,6 @@ std::vector<int> load() {
 			std::cin >> c;
 	}
 	return m;
-}
-
-void dump(std::vector<int> &m) {
-	for (int c : m)
-		std::cout << c << ",";
-	std::cout << "\n";
 }
 
 std::vector<int> run(std::vector<int> &m, std::vector<int> &input) {
