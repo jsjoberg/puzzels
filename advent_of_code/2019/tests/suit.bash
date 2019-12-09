@@ -46,6 +46,8 @@ tc 04a input4 2150
 tc 04b input4 1462
 tc 05a input5 11049715
 tc 05b input5 2140710
+tc 06a input6_ex1 42
+tc 06a input6 186597
 
 report
 
