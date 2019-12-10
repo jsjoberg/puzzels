@@ -50,7 +50,13 @@ tc 06a input6_ex1 42
 tc 06a input6 186597
 tc 06b input6_ex2 4
 tc 06b input6 412
+tc 07a input7_ex1 43210
+tc 07a input7_ex2 54321
+tc 07a input7_ex3 65210
 tc 07a input7 95757
+tc 07b input7_ex4 139629729
+tc 07b input7_ex5 18216
+tc 07b input7 4275738
 
 report
 
