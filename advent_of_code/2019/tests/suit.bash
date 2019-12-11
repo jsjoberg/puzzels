@@ -5,7 +5,7 @@ tc() {
 	local name=${1##*/}
 	local test=${2##*/}
 	local res=$(mktemp)
-	$DIR/$name < $DIR/tests/$test > $res
+	$DIR/$name < $DIR/tests/$test > $res 2>&1
 	cmp -s $res $DIR/tests/$name/$test && echo $name $test ok || {
 		echo $name $test not ok >&2
 		diff $res $DIR/tests/$name/$test >&2

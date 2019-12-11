@@ -106,7 +106,6 @@ int main() {
 	int max = std::numeric_limits<int>::min();
 	struct computer amp[5];
 	do {
-
 		for (int i = 0; i < 5; ++i) {
 			amp[i] = origo;
 			amp[i].run();
