@@ -2,7 +2,6 @@
 #include <iostream>
 #include <limits>
 #include <tuple>
-#include <vector>
 
 int main() {
 	std::array<char, 25 * 6> buffer;
