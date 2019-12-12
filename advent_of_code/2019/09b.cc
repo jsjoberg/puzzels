@@ -6,7 +6,7 @@ int main() {
 	while (c.running()) {
 		c.run();
 		if (c.reading())
-			c.put(1);
+			c.put(2);
 		if (c.writing())
 			std::cout << c.get() << "\n";
 	}
