@@ -58,8 +58,21 @@ bool computer::writing() {
 }
 
 int computer::mode(int key) {
-	int mask = key == 1 ? 100 : key == 2 ? 1000 : 10000;
-	return ((int) memory[index] / mask) % 10;
+	switch (key) {
+		case 1:
+			return ((int) memory[index] / 100) % 10;
+			break;
+		case 2:
+			return ((int) memory[index] / 1000) % 10;
+			break;
+		case 3:
+			return ((int) memory[index] / 10000) % 10;
+			break;
+		default:
+			std::cerr << "Unknown operand\n";
+			break;
+	}
+	return 0;
 }
 
 long long computer::load(int key) {
