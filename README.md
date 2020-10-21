@@ -7,3 +7,4 @@ Solutions to some Advent of Code 2018 problems in C++.
 
 Solutions to some Advent of Code 2019 problems in C++.
 
+Solutions to some Project Euler problems in Go.
