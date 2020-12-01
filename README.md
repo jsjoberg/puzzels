@@ -1,10 +1,12 @@
-# puzzels
-or rather solutions to some coding puzzles.
+# Puzzels
+Some of my solutions to coding puzzle problems.
 
-Solutions to some Advent of Code 2016 problems in C, C++, Scheme or TCL.
+Advent of Code 2016 solutions in C, C++, Scheme and TCL.
 
-Solutions to some Advent of Code 2018 problems in C++.
+Advent of Code 2018 solutions in C++.
 
-Solutions to some Advent of Code 2019 problems in C++.
+Advent of Code 2019 solutions in C++.
 
-Solutions to some Project Euler problems in Go.
+Advent of Code 2020 solution in Python.
+
+Project Euler solutions in Go.
