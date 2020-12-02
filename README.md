@@ -7,6 +7,6 @@ Advent of Code 2018 solutions in C++.
 
 Advent of Code 2019 solutions in C++.
 
-Advent of Code 2020 solution in Python.
+Advent of Code 2020 solutions in Python.
 
 Project Euler solutions in Go.
