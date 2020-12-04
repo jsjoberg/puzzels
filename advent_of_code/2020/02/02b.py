@@ -11,13 +11,5 @@ def validate(s):
     y = d[j] == c
     return x ^ y
 
-def main():
-    f = open("input.txt", "r")
-    n = 0
-    for line in f.readlines():
-        if validate(line):
-            n += 1
-    print(n)
-
 if __name__ == "__main__":
-    main()
+    print(sum(validate(line) for line in open("input.txt")))

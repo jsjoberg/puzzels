@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("input.txt", "r")
+    f = open("input.txt")
     xs = list(map(int, f.readlines()))
     for i, x in enumerate(xs):
         for y in xs[i + 1:]:
