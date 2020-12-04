@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import re
+
 def pps():
     pp = {}
     for line in open("input.txt"):
@@ -14,40 +16,31 @@ def pps():
 def hgt(v):
     value = v[:-2]
     unit = v[-2:]
-    return (unit == "cm" and 150 <= int(value) <= 193) or \
-            (unit == "in" and 59 <= int(value) <= 76)
-
-def hcl(v):
-    zero_to_f = set(hex(x)[2:] for x in range(16))
-    return len(v) == 7 and v[0] == "#" and \
-        all(c in zero_to_f for c in v[1:])
-
-def pid(v):
-    zero_to_nine = set(map(str, range(10)))
-    return len(v) == 9 and all(c in zero_to_nine for c in v)
+    if unit == "cm":
+        return 150 <= int(value) <= 193
+    if unit == "in":
+        return 59 <= int(value) <= 76
+    return False
 
 def ecl(v):
     return v in {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}
 
-def during(v, start, stop):
-    return len(v) == 4 and start <= int(v) <= stop
-
-def rules(x):
+def rules(pp):
     rules = {
-        "byr": lambda v: during(v, 1920, 2002),
-        "iyr": lambda v: during(v, 2010, 2020),
-        "eyr": lambda v: during(v, 2020, 2030),
+        "byr": lambda v: 1920 <= int(v) <= 2002,
+        "iyr": lambda v: 2010 <= int(v) <= 2020,
+        "eyr": lambda v: 2020 <= int(v) <= 2030,
         "hgt": hgt,
-        "hcl": hcl,
+        "hcl": lambda v: re.match(r"^#[\da-fA-F]{6}$", v),
         "ecl": ecl,
-        "pid": pid,
+        "pid": lambda v: re.match(r"^\d{9}$", v),
         "cid": lambda _: True
     }
-    return all(rules[k](v) for k, v in x.items())
+    return all(rules[k](v) for k, v in pp.items())
 
 def required_keys(pp):
     keys = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
     return all(k in pp for k in keys)
 
 if __name__ == "__main__":
-    print(sum(required_keys(x) and rules(x) for x in pps()))
+    print(sum(required_keys(pp) and rules(pp) for pp in pps()))
