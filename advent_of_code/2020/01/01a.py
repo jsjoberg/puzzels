@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("input.txt")
-    xs = list(map(int, f.readlines()))
+    xs = tuple(map(int, open("input.txt")))
     for i, x in enumerate(xs):
         for y in xs[i + 1:]:
             if x + y == 2020:

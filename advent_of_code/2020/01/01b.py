@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("input.txt")
-    xs = list(map(int, f.readlines()))
+    xs = tuple(map(int, open("input.txt")))
     for i, x in enumerate(xs):
         for j, y in enumerate(xs[i + 1:]):
             for z in xs[i + j + 1:]:
