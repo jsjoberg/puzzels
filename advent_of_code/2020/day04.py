@@ -1,10 +1,22 @@
-#!/usr/bin/env python3
-
 import re
 
-def pps():
+def pps(data):
+    pp = set()
+    for line in data:
+        for s in line.split():
+            pp.add(s.split(":")[0])
+        if not line.strip():
+            yield pp
+            pp.clear()
+    yield pp
+
+def part1(data):
+    keys = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
+    return sum(all(k in pp for k in keys) for pp in pps(data))
+
+def pps2(data):
     pp = {}
-    for line in open("input.txt"):
+    for line in data:
         for s in line.split():
             k, v = s.split(":")
             pp[k] = v
@@ -42,5 +54,10 @@ def required_keys(pp):
     keys = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
     return all(k in pp for k in keys)
 
+def part2(data):
+    return sum(required_keys(pp) and rules(pp) for pp in pps2(data))
+
 if __name__ == "__main__":
-    print(sum(required_keys(pp) and rules(pp) for pp in pps()))
+    import sys
+    #print(part1(sys.stdin))
+    print(part2(sys.stdin))
