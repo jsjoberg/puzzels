@@ -1,8 +1,5 @@
-import day01
-import day02
-import day03
-import day04
-import day05
+import day01, day02, day03, day04, day05
+import day06
 
 if __name__ == "__main__":
     assert day01.part1(open("input/01")) == 319531
@@ -15,4 +12,6 @@ if __name__ == "__main__":
     assert day04.part2(open("input/04")) == 160
     assert day05.part1(open("input/05")) == 874
     assert day05.part2(open("input/05")) == 594
+    assert day06.part1(open("input/06")) == 6590
+    assert day06.part2(open("input/06")) == 3288
     print("ok")
