@@ -22,5 +22,5 @@ def part2(data):
 
 if __name__ == "__main__":
     import sys
-    print(part1(sys.stdin))
-    #print(part2(sys.stdin))
+    #print(part1(sys.stdin))
+    print(part2(sys.stdin))

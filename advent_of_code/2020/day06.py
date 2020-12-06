@@ -1,16 +1,16 @@
 def groups(data):
-    ys = []
+    group = []
     for line in data:
-        xs = set()
+        row = set()
         for c in line:
             if "a" <= c <= "z":
-                xs.add(c)
-        if xs:
-            ys.append(xs)
+                row.add(c)
+        if row:
+            group.append(row)
         else:
-            yield ys
-            ys.clear()
-    yield ys
+            yield group
+            group.clear()
+    yield group
 
 def count(data, combo):
     acc = 0
