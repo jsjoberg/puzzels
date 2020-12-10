@@ -1,7 +1,7 @@
 import time
 
 import day01, day02, day03, day04, day05
-import day06, day07, day08
+import day06, day07, day08, day09
 
 if __name__ == "__main__":
     start = time.perf_counter_ns()
@@ -21,6 +21,8 @@ if __name__ == "__main__":
     assert day07.part2(open("input/07")) == 18925
     assert day08.part1(open("input/08")) == 1753
     assert day08.part2(open("input/08")) == 733
+    assert day09.part1(open("input/09")) == 31161678
+    assert day09.part2(open("input/09")) == 5453868
     stop = time.perf_counter_ns()
     ms = (stop - start) // 1_000_000
     print(f"ok, runtime {ms}ms")
