@@ -1,10 +1,10 @@
 def part1(data):
     ns = sorted(int(l) for l in data)
-    end = ns[-1] + 3
+    ns = [0] + ns + [ns[-1] + 3]
     ones = 0
     threes = 0
-    for a, b in zip([0]+ns, ns+[end]):
-        diff = b - a
+    for i in range(len(ns) - 1):
+        diff = ns[i + 1] - ns[i]
         if diff == 1:
             ones += 1
         elif diff == 3:
