@@ -8,8 +8,8 @@ def part1(data):
 def part2(data):
     xs = tuple(map(int, data))
     for i, x in enumerate(xs):
-        for j, y in enumerate(xs[i + 1:]):
-            for z in xs[i + j + 1:]:
+        for j, y in enumerate(xs[i + 1:], i + 1):
+            for z in xs[j:]:
                 if x + y + z == 2020:
                     return x * y * z
 
