@@ -8,9 +8,13 @@ def part1(data):
 def part2(data):
     xs = tuple(map(int, data))
     for i, x in enumerate(xs):
+        a = 2020 - x
         for j, y in enumerate(xs[i + 1:], i + 1):
+            b = a - y
+            if b < 0:
+                continue
             for z in xs[j:]:
-                if x + y + z == 2020:
+                if b == z:
                     return x * y * z
 
 if __name__ == "__main__":
