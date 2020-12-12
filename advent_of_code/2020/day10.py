@@ -12,8 +12,6 @@ def part1(data):
     return ones * threes
 
 def part2(data):
-    # Thank you Nunki3 for posting this hint!
-    # https://old.reddit.com/r/adventofcode/comments/kacdbl/2020_day_10c_part_2_no_clue_how_to_begin/gf9lzhd/
     ns = sorted(int(l) for l in data)
     ns = [0] + ns + [ns[-1] + 3]
     a = 1
