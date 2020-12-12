@@ -24,6 +24,7 @@ if __name__ == "__main__":
     assert day09.part1(open("input/09")) == 31161678
     assert day09.part2(open("input/09")) == 5453868
     assert day10.part1(open("input/10")) == 1690
+    assert day10.part2(open("input/10")) == 5289227976704
     stop = time.perf_counter_ns()
-    ms = (stop - start) // 1_000_000
+    ms = (stop - start) // 1e6
     print(f"ok, runtime {ms}ms")
