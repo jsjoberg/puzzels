@@ -2,23 +2,33 @@ class Seat:
     def __init__(self, limit):
         self.neighbors = []
         self.taken = False
-        self.change = False
+        self.going = False
         self.limit = limit
 
     def add(self, s):
         self.neighbors.append(s)
 
     def tick(self):
-        if (not self.taken and
-            not any(s.taken for s in self.neighbors)):
-            self.change = True
-        if (self.taken and
-            sum(s.taken for s in self.neighbors) >= self.limit):
-            self.change = False
+        if self.taken:
+            n = 0
+            for s in self.neighbors:
+                if s.taken:
+                    n += 1
+                    if n >= self.limit:
+                        self.going = False
+                        break
+        else:
+            f = True
+            for s in self.neighbors:
+                if s.taken:
+                    f = False
+                    break
+            if f:
+                self.going = True
 
     def update(self):
-        diff = self.taken != self.change
-        self.taken = self.change
+        diff = self.taken != self.going
+        self.taken = self.going
         return diff
 
 class Area:
