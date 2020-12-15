@@ -31,6 +31,7 @@ class Seat:
         self.taken = self.going
         return diff
 
+
 class Area:
     def __init__(self, data):
         xs = [[Seat(4) if c == "L" else None for c in l]
@@ -40,8 +41,8 @@ class Area:
         mj = len(xs[0])
         dis = (-1, -1, -1,  0, 0,  1, 1, 1)
         djs = (-1,  0,  1, -1, 1, -1, 0, 1)
-        for i in range(len(xs)):
-            for j in range(len(xs[0])):
+        for i in range(mi):
+            for j in range(mj):
                 if xs[i][j]:
                     for di, dj in zip(dis, djs):
                         if (0 <= i+di < mi and
@@ -56,12 +57,14 @@ class Area:
                 s.tick()
             f = True
             for s in self.seats:
-                f = not s.update() and f
+                if s.update():
+                    f = False
             if f:
                 break
 
     def taken(self):
         return sum(s.taken for s in self.seats)
+
 
 class Area2(Area):
     def __init__(self, data):
@@ -72,8 +75,8 @@ class Area2(Area):
         mj = len(xs[0])
         dis = (-1, -1, -1,  0, 0,  1, 1, 1)
         djs = (-1,  0,  1, -1, 1, -1, 0, 1)
-        for i in range(len(xs)):
-            for j in range(len(xs[0])):
+        for i in range(mi):
+            for j in range(mj):
                 if xs[i][j]:
                     for di, dj in zip(dis, djs):
                         s = 1
@@ -86,6 +89,7 @@ class Area2(Area):
                             xs[i+di*s][j+dj*s]):
                             xs[i][j].add(xs[i+di*s][j+dj*s])
                     self.seats.append(xs[i][j])
+
 
 def part1(data):
     area = Area(data)

@@ -37,10 +37,10 @@ def part2(data):
         a = l[0]
         n = int(l[1:])
         if a == "L":
-            for i in range(n // 90):
+            for _ in range(n // 90):
                 wx, wy = -wy, wx
         elif a == "R":
-            for i in range(n // 90):
+            for _ in range(n // 90):
                 wx, wy = wy, -wx
         elif a == "N":
             wy += n
