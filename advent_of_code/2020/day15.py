@@ -1,26 +1,15 @@
-def speak(d, i, n):
-    if n not in d:
-        d[n] = i
-        return 0
-    else:
-        t = i - d[n]
-        d[n] = i
-        return t
-
 def play(data, limit):
-    ns = data.readline().split(",")
     d = {}
-    x = 0
-    i = 1
-    n = int(ns[0])
-    for s in ns[1:]:
+    p = 0
+    ns = data.readline().split(",")
+    for i, n in enumerate(map(int, ns), 1):
+        p = n
         d[n] = i
-        n = int(s)
-        i += 1
-    while i < limit:
-        n = speak(d, i, n)
-        i += 1
-    return n
+    for i in range(len(ns), limit):
+        v = i - d.get(p, i)
+        d[p] = i
+        p = v
+    return p
 
 def part1(data):
     return play(data, 2020)
